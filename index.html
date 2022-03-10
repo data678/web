@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <style>
+       .border {
+           border: 2px solid red;
+       }
+       .btn {
+           border: 1px solid blue;
+           width: 250px;
+       }
+       .data {
+           width: 100%;
+           height: 200px;
+       }
+   </style>
+    <title>找找谁没来</title>
+</head>
+<body>
+    <h1>填入要筛选的文本：</h1>
+    <textarea rows="3" cols="20" class="border data" id="data" placeholder="点击粘贴"> 
+        
+　　</textarea>
+    <h2  id="btn" onclick="getValue()" class="btn">点击查看本次结果：</h2>
+    <h3>没找到：</h3>
+    <div id="result" class="btn"></div>
+</body>
+<script>
+    name_list = ['李洋译',
+ '周浩宇',
+ '车宇轩',
+ '李昊阳',
+ '金喆',
+ '刘子腾',
+ '田浩洋',
+ '崔蕴阳',
+ '苏宇晨',
+ '满浩洋',
+ '贾思晨',
+ '回宇航',
+ '李诗语',
+ '白润豪',
+ '徐梅婷',
+ '李姗姗',
+ '康凯',
+ '许华峰',
+ '周天宇',
+ '李翔',
+ '刘晓旭',
+ '邓士国',
+ '吴荔涵',
+ '王梓豪',
+ '李艺涵',
+ '杜燕豪',
+ '王潇珞',
+ '王宇翔',
+ '郝子涵',
+ '周欣萌',
+ '张君硕',
+ '张嘉信', '王诚皓'];
+ 
+    function getValue(){
+      var x = document.getElementById("data");
+    //   alert(x.value);
+    result = '';
+
+        for (let name of name_list) {
+        if (!x.value.includes(name)) {
+            result += '<div>' + name + '</div>';
+         }
+        }
+
+    document.getElementById('result').innerHTML = result;
+    }
+</script>
+</html>
