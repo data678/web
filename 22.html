@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <style>
+       .border {
+           border: 2px solid red;
+       }
+       .btn {
+           border: 1px solid blue;
+           width: 250px;
+       }
+       .data {
+           width: 100%;
+           height: 200px;
+       }
+   </style>
+    <title>找找谁没来</title>
+</head>
+<body>
+    <h1>填入要筛选的文本：</h1>
+    <textarea rows="3" cols="20" class="border data" id="data" placeholder="点击粘贴"> 
+        
+　　</textarea>
+    <h2  id="btn" onclick="getValue()" class="btn">点击查看本次结果：</h2>
+    <h3>没找到：</h3>
+    <div id="result" class="btn"></div>
+</body>
+<script>
+    name_list = [
+    '苏锡鹏',
+'杨承瑞',
+'闫俊毅',
+'戚永宁',
+'张宇阳',
+'杨浩坤',
+'王鸿儒',
+'谷禹震',
+'吴兆鑫',
+'栾宝旭',
+'魏伟桥',
+'吕嘉兴',
+'吕鑫',
+'肖文宇',
+'王浩宇',
+'闫晨萱',
+'石卓烁',
+'闫智超',
+'王瑞卓',
+'郑鑫',
+'吴昊明',
+'方思莹',
+'田博',
+'高海轩',
+'田清松',
+'赵亦寒',
+'颜禹臣',
+'王晟',
+'杜培文',
+];
+ 
+    function getValue(){
+      var x = document.getElementById("data");
+    //   alert(x.value);
+    result = '';
+
+        for (let name of name_list) {
+        if (!x.value.includes(name)) {
+            result += '<div>' + name + '</div>';
+         }
+        }
+
+    document.getElementById('result').innerHTML = result;
+    }
+</script>
+</html>
